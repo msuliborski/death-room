@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerConroller : MonoBehaviour {
+    // Use this for initialization
+    private DeathManager dm;
 
-	// Use this for initialization
-	void Start () {
-	
+    void Awake()
+    {
+        dm = GameObject.FindObjectOfType<DeathManager>();
+    }
+
+    void Start () {
+       
 	}
 	
 	// Update is called once per frame
@@ -14,8 +20,9 @@ public class PlayerConroller : MonoBehaviour {
 		
 	}
 
-	public void Death()
-	{
-		Destroy(this);
-	}
+    public void Death()
+    {
+       Destroy(this);
+    }
 }
+

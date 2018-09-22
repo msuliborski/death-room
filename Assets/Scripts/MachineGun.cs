@@ -14,20 +14,35 @@ public class MachineGun : MonoBehaviour
     public float ammunition = 10;
 
     bool flag = true;
+    bool isTriggered = false;
+
+
 
     void Start()
     {
-        StartCoroutine(Cooldown(2));
+              
     }
     
     // Update is called once per frame
     void Update()
     {
-        Vector2 direction = Player.transform.position - transform.position; 
+        aim();
+    }
+
+    IEnumerator Cooldown(float time)
+    {
+        flag = false;
+        yield return new WaitForSeconds(time);
+        flag = true;
+    }
+
+    void aim()
+    {
+        Vector2 direction = (Player.transform.position - transform.position);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationOffset);
 
         if (flag && ammunition >= 0)
         {
@@ -38,12 +53,5 @@ public class MachineGun : MonoBehaviour
             Destroy(shot, 5);
             ammunition--;
         }
-    }
-
-    IEnumerator Cooldown(float time)
-    {
-        flag = false;
-        yield return new WaitForSeconds(time);
-        flag = true;
     }
 }
