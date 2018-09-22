@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95778611660850764}
   - component: {fileID: 114837091197680986}
   - component: {fileID: 61519841195842366}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: machineGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 114602535987993048}
   - component: {fileID: 212950918797554028}
   - component: {fileID: 114819344321657772}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TileMachineGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1773913948203546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.38, y: 1.34, z: -0.034618832}
+  m_LocalPosition: {x: -4.67, y: -4.63, z: -0.034618832}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4386813022897700}

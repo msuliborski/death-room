@@ -15,9 +15,6 @@ public class MachineGun : MonoBehaviour
     public float ammunition = 10;
 
     bool flag = true;
-    bool isTriggered = false;
-
-
 
     void Start()
     {

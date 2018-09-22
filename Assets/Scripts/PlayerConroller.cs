@@ -12,6 +12,11 @@ public class PlayerConroller : MonoBehaviour {
     public GameObject laserCut;
     public GameObject _shot;
 
+    bool isDead;
+
+    private void Update() {
+        if(isDead) enableResetGame();
+    }
     
     public void Kaboom()
     {
@@ -19,6 +24,7 @@ public class PlayerConroller : MonoBehaviour {
         Instantiate(leg2, new Vector3(transform.position.x-2, transform.position.y, transform.position.z), Quaternion.identity);
         Instantiate(blood, transform.position, Quaternion.identity);
         transform.position = new Vector2(100, 100);
+        isDead = true;
     }
 
     public void Lazers()
@@ -26,25 +32,41 @@ public class PlayerConroller : MonoBehaviour {
         Instantiate(laserCut, transform.position, Quaternion.identity);
         Instantiate(blood, transform.position, Quaternion.identity);
         transform.position = new Vector2(100, 100);
+        isDead = true;
     }
 
     public void Smash()
     {
         Instantiate(blood, transform.position, Quaternion.identity);
         transform.position = new Vector2(100, 100);
+        isDead = true;
     }
 
     public void Fall()
     {
         transform.position = new Vector2(100, 100);
+        isDead = true;
     }
 
     public void shot()
     {
         Instantiate(_shot, transform.position, Quaternion.identity);
         Instantiate(blood, transform.position, Quaternion.identity);
-        transform.position = new Vector2(100, 100);
-        
+        transform.position = new Vector2(100, 100); 
+        isDead = true;
     }
+
+    void enableResetGame(){
+        //opcja resetu na przycisk?
+        if(Input.GetKeyDown(KeyCode.H)) {
+            isDead = false;
+            transform.position = new Vector2(1.658f, 2.204f);
+            //tilesPlacement.restoreTiles();
+            TilesPlacemant.restoreTiles();
+            //reset punktacji w gui
+
+        }   
+    }
+
 }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmTrap : MonoBehaviour {
+public class TriggerTrap : MonoBehaviour {
     bool isTriggered = false;
     public GameObject machineGun;
 

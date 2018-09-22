@@ -4,20 +4,28 @@ using UnityEngine;
 
 public class TilesPlacemant : MonoBehaviour {
 
-	public List<GameObject> tilesBackup;
+	public static List<GameObject> tilesBackup = new List<GameObject>();
+	public static List<GameObject> displayedTiles = new List<GameObject>();
 
 	public GameObject Floor;
-	public GameObject empty;
-	public GameObject rocket;
-	public GameObject trap;
-	public GameObject press;
-	public GameObject spikes;
-	public GameObject machinegun;
-	public GameObject laser;
+	public static GameObject empty;
+	public static GameObject rocket;
+	public static GameObject trap;
+	public static GameObject press;
+	public static GameObject spikes;
+	public static GameObject machinegun;
+	public static GameObject laser;
 	
-	Vector2 offset = new Vector2(1.22f, -0.1f);
+	public static Vector2 offset = new Vector2(1.22f, -0.1f);
 
 	void Start () {
+		empty = GameObject.Find("/unityjestchujowe/TileEmpty");
+		rocket = GameObject.Find("/unityjestchujowe/TileRocket");
+		trap = GameObject.Find("/unityjestchujowe/TileTrap");
+		press = GameObject.Find("/unityjestchujowe/TilePress");
+		spikes = GameObject.Find("/unityjestchujowe/TileSpikes");
+		machinegun = GameObject.Find("/unityjestchujowe/TileMachineGun");
+		laser = GameObject.Find("/unityjestchujowe/TileLaser");
 		spawnTiles();
 	}
 
@@ -25,28 +33,31 @@ public class TilesPlacemant : MonoBehaviour {
 		
 	}
 
-	void spawnTiles(){
+	static void spawnTiles(){
 
 		float randomVer = (float)((int)((Random.Range(0, 3)))*1.2 + 0.6);
 		for(float j = 4.2f; j > -0.6f; j -= 1.2f){
 			for(float i = 0.6f; i < 12.6f; i += 2.4f){
-				Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity);
+				displayedTiles.Add(Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity));
 			}
 			for(float i = 1.8f; i < 10.2f; i += 2.4f){
 				if(randomVer >= (j-0.2) && randomVer <= (j+0.2)) {
-					Instantiate(empty, new Vector2(i, randomVer) + offset, Quaternion.identity);
+					displayedTiles.Add(Instantiate(empty, new Vector2(i, randomVer) + offset, Quaternion.identity));
 					tilesBackup.Add(empty);
 				} else {
 					GameObject g = getRandomTile();
-					Instantiate(g, new Vector2(i, j) + offset, Quaternion.identity);
+					displayedTiles.Add(Instantiate(g, new Vector2(i, j) + offset, Quaternion.identity));
 					tilesBackup.Add(g);
 				}
 			}
 		}
 	}
 	
-	void restoreTiles(){
+	public static void restoreTiles(){
 		int k = 0;
+		for(int i = 0; i < displayedTiles.Count; i++){
+			Destroy(displayedTiles[i]);
+		}
 		for(float j = 4.2f; j > -0.6f; j -= 1.2f){
 			for(float i = 0.6f; i < 12.6f; i += 2.4f){
 				Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity);
@@ -58,18 +69,18 @@ public class TilesPlacemant : MonoBehaviour {
 	}
 	
 
-	GameObject getRandomTile() {
+	static GameObject getRandomTile() {
 		int randomNum = (int) (Random.Range(1, 7));
-		GameObject randomTile;
+		GameObject randomTile = empty;
 		switch(randomNum){
-			case 1: return empty;
-			case 2: return rocket; 
-			case 3: return trap; 
-			case 4: return press;
-			case 5: return spikes;
-			case 6: return machinegun;
-			case 7: return laser;
+			case 1: return randomTile;
+			case 2: return randomTile = rocket; 
+			case 3: return randomTile = trap; 
+			case 4: return randomTile = press;
+			case 5: return randomTile = spikes;
+			case 6: return randomTile = machinegun;
+			case 7: return randomTile = laser;
 		}
-		return empty;
+		return randomTile;
 	}
 }
