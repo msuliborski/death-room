@@ -2211,6 +2211,17 @@ Prefab:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1337844877}
+    - target: {fileID: 114880869422594144, guid: 2d4e345f5028d4c5abf16f832b32a4c8,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1337844876}
+    - target: {fileID: 114880869422594144, guid: 2d4e345f5028d4c5abf16f832b32a4c8,
+        type: 2}
+      propertyPath: blood
+      value: 
+      objectReference: {fileID: 1627181372522262, guid: 3524dc9e070df8847b3956b1b26e123a,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d4e345f5028d4c5abf16f832b32a4c8, type: 2}
   m_IsPrefabAsset: 0
