@@ -9,10 +9,14 @@ public class bullet : MonoBehaviour {
 
     // Use this for initialization
 
-    public void OnTriggerEnter2D(Collider2D colliderPlayer)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Instantiate(explosion, this.transform.position, Quaternion.identity);
-        Destroy(this.gameObject);
-        _playerController.shot();
+        _playerController = collision.gameObject.GetComponent<PlayerConroller>();
+        if(collision.gameObject.tag == "Player")
+        {
+            _playerController.shot();
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }
