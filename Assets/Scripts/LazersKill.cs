@@ -6,9 +6,11 @@ public class LazersKill : MonoBehaviour {
 
     PlayerConroller playerController;
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 5)
+        playerController = collision.gameObject.GetComponent<PlayerConroller>();
+        if (collision.gameObject.tag == "Player")
         {
             playerController.Lazers();
         }

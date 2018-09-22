@@ -18,32 +18,32 @@ public class PlayerConroller : MonoBehaviour {
         Instantiate(leg1, transform.position, Quaternion.identity);
         Instantiate(leg2, new Vector3(transform.position.x-2, transform.position.y, transform.position.z), Quaternion.identity);
         Instantiate(blood, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        transform.position = new Vector2(100, 100);
     }
 
     public void Lazers()
     {
         Instantiate(laserCut, transform.position, Quaternion.identity);
         Instantiate(blood, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        transform.position = new Vector2(100, 100);
     }
 
     public void Smash()
     {
         Instantiate(blood, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        transform.position = new Vector2(100, 100);
     }
 
     public void Fall()
     {
-        Destroy(gameObject);
+        transform.position = new Vector2(100, 100);
     }
 
     public void shot()
     {
         Instantiate(_shot, transform.position, Quaternion.identity);
         Instantiate(blood, transform.position, Quaternion.identity);
-        //Destroy(gameObject);
+        transform.position = new Vector2(100, 100);
         
     }
 }

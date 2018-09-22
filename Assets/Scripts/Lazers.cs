@@ -10,18 +10,20 @@ public class Lazers : MonoBehaviour {
     bool flag = false;
     private AudioSource source;
     public AudioClip clip;
-    
+    bool isTriggered = false;
+
 
     private void Start()
     {
         source = GetComponent<AudioSource>();
         source.clip = clip;
-        source.PlayOneShot(source.clip);
+        
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D _colliderPlayer)
     {
-        if(collision.gameObject.layer == 5)
+        if(!isTriggered)
         {
+            isTriggered = true;
             source.PlayOneShot(source.clip);
             flag = true;
             StartCoroutine(Cooldown());
@@ -40,7 +42,7 @@ public class Lazers : MonoBehaviour {
 
     IEnumerator Cooldown()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(2f);
         flag = false;
         _lazerV.SetActive(false);
         _lazerV.transform.position = new Vector2(0.5f, 0);
