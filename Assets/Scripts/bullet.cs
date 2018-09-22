@@ -12,7 +12,9 @@ public class bullet : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D colliderPlayer)
     {
         Instantiate(explosion, this.transform.position, Quaternion.identity);
+
+        //_playerController.shot();
+
         Destroy(this.gameObject);
-        _playerController.shot();
     }
 }
