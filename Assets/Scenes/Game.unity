@@ -1073,6 +1073,11 @@ Prefab:
       propertyPath: m_Name
       value: TileEmpty (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 61736046165208524, guid: b0f9d7230608f48f3b74f2be67a8cd20,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0f9d7230608f48f3b74f2be67a8cd20, type: 2}
   m_IsPrefabAsset: 0
