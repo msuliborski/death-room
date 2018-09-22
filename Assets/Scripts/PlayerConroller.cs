@@ -43,7 +43,8 @@ public class PlayerConroller : MonoBehaviour {
     {
         Instantiate(_shot, transform.position, Quaternion.identity);
         Instantiate(blood, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        
     }
 }
 
