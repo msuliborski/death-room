@@ -8,12 +8,17 @@ public class MachineGun : MonoBehaviour
     public GameObject SpawnPoint;
     public GameObject Player;
 
-    public float firerate = 0.5f;
+    public float firerate = 2f;
     public float velocity = 15f;
-    public float rotationOffset = 0.2f;
+    public float rotationOffset = 0.4f;
     public float ammunition = 10;
 
     bool flag = true;
+
+    void Start()
+    {
+        StartCoroutine(Cooldown(2));
+    }
     
     // Update is called once per frame
     void Update()
@@ -29,17 +34,16 @@ public class MachineGun : MonoBehaviour
             direction.Normalize();
             GameObject shot = (GameObject)Instantiate(Bullet, SpawnPoint.transform.position, Quaternion.identity);
             shot.GetComponent<Rigidbody2D>().velocity = transform.right * velocity;
-            StartCoroutine(Cooldown());
+            StartCoroutine(Cooldown(1));
             Destroy(shot, 5);
             ammunition--;
         }
     }
 
-    IEnumerator Cooldown()
+    IEnumerator Cooldown(float time)
     {
         flag = false;
-
-        yield return new WaitForSeconds(firerate);
+        yield return new WaitForSeconds(time);
         flag = true;
     }
 }
