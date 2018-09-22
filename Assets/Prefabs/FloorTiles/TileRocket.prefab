@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61366246927950318}
   - component: {fileID: 114053010252990144}
   m_Layer: 8
-  m_Name: TileFlamethrower
+  m_Name: TileRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
