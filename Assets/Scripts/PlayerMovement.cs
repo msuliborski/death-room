@@ -9,10 +9,22 @@ public class PlayerMovement : MonoBehaviour {
 	float vel = 4f;
 
 	void Start () {
+		// StartCoroutine(Example());
 		_rigidbody = gameObject.GetComponent<Rigidbody2D>();
+		//_rigidbody.isKinematic = true;
 		_rigidbody.velocity = new Vector2(0, 0);
+		//transform.position = transform.position - new Vector3(2, 0, 0);
+		// Vector2 d = transform.position;
+		//Vector2 dd = transform.position + new Vector3(2, 0);
+		// transform.position = Vector2.MoveTowards(d, new Vector2(1.81, 2.07), 50);
 	}
-	
+
+	// IEnumerator Example()
+    // {
+    //     print(Time.time);
+    //     yield return new WaitForSeconds(1);
+    //     print(Time.time);
+    // }
 	
 	void LateUpdate () {
 
@@ -52,11 +64,8 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	void stopAll(){
             animator.SetBool("Speed_up", false);
-    
             animator.SetBool("Speed_down", false);
-    
             animator.SetBool("Speed_left", false);
-    
             animator.SetBool("Speed_right", false);
 	}
 }

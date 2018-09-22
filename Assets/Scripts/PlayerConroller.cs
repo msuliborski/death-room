@@ -5,24 +5,22 @@ using UnityEngine;
 public class PlayerConroller : MonoBehaviour {
     // Use this for initialization
     private DeathManager dm;
-
-    void Awake()
+    public GameObject player;
+    public GameObject blood;
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        dm = GameObject.FindObjectOfType<DeathManager>();
+        
     }
 
-    void Start () {
-       
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+    // Update is called once per frame
+    void Update () {
+        if (Input.GetKeyDown(KeyCode.P)) Death();
 	}
 
-    public void Death()
-    {
-       Destroy(this);
-    }
+	public void Death()
+	{
+        Instantiate(blood, transform.position, Quaternion.identity);
+        player.SetActive(false);
+	}
 }
 

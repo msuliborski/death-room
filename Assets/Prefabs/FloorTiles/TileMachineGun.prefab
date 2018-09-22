@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4985571375991734}
   - component: {fileID: 212094894078851926}
   - component: {fileID: 61592796237086406}
-  - component: {fileID: 114487013818798990}
+  - component: {fileID: 114033006218912710}
   m_Layer: 8
   m_Name: TileMachineGun
   m_TagString: Untagged
@@ -51,7 +51,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114487013818798990
+--- !u!114 &114033006218912710
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,16 +75,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1633226581783020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5f799b7e16a268468662d79c8087f93, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d1ac4322fb944c4bb2f58c5addf5f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 0}
-  SpawnPoint: {fileID: 0}
-  Player: {fileID: 0}
-  firerate: 2
-  velocity: 15
-  rotationOffset: 0.4
-  ammunition: 10
 --- !u!212 &212094894078851926
 SpriteRenderer:
   m_ObjectHideFlags: 1
