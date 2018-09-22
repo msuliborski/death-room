@@ -17,7 +17,7 @@ public class Missile : MonoBehaviour {
     {
         Vector2 point2target = (Vector2)transform.position - (Vector2)_player.transform.position;
         point2target.Normalize();
-        float value = Vector3.Cross(point2target, transform.up).z;
+        float value = Vector3.Cross(point2target, -transform.right).z;
         if (value > 0)
         {
             rb.angularVelocity = rotatingSpeed;
@@ -29,7 +29,7 @@ public class Missile : MonoBehaviour {
         else
             rb.angularVelocity = 0;
 
-        rb.velocity = transform.up * speed;
+        rb.velocity = -transform.right * speed;
     }
     
 }
