@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TilePress : MonoBehaviour {
 
-    PlayerConroller playerController;
+    
     public GameObject wallUp;
     public GameObject wallDown;
     int flag = 0;
@@ -30,6 +30,7 @@ public class TilePress : MonoBehaviour {
        }
 
     void OnTriggerEnter2D(Collider2D _colliderPlayer){
+        
         spriteRenderer.color = Color.blue;
 
         if (!isTriggered)
@@ -37,7 +38,7 @@ public class TilePress : MonoBehaviour {
             isTriggered = true;
             flag = 1;
             StartCoroutine(Cooldown());
-            //playerController.Smash();
+            
         }
 
     }
