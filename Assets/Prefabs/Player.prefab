@@ -64,7 +64,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61714227288694846
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -74,7 +74,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.022784948, y: -0.40315795}
@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44a97f2de5cbeb4f97ebd576347b610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1574551274979200}
-  blood: {fileID: 1627181372522262, guid: 3524dc9e070df8847b3956b1b26e123a, type: 2}
+  player: {fileID: 0}
+  blood: {fileID: 0}
 --- !u!114 &114905262088984744
 MonoBehaviour:
   m_ObjectHideFlags: 1
