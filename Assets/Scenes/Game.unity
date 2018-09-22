@@ -1779,12 +1779,12 @@ MonoBehaviour:
   tilesBackup: []
   Floor: {fileID: 591540631}
   empty: {fileID: 1133954247881950, guid: b0f9d7230608f48f3b74f2be67a8cd20, type: 2}
-  rocket: {fileID: 1672888312070436, guid: d1daaf40726c8436f86697d30bd4f3c2, type: 2}
-  trap: {fileID: 1799472717552472, guid: 155dba16b529f4dc386408dcdf4bf130, type: 2}
-  press: {fileID: 1809433052240208, guid: 44975056869fa4942ab187d283cb64f2, type: 2}
+  rocket: {fileID: 1388639327196550, guid: d1daaf40726c8436f86697d30bd4f3c2, type: 2}
+  trap: {fileID: 1943420509017356, guid: 155dba16b529f4dc386408dcdf4bf130, type: 2}
+  press: {fileID: 1389100888967012, guid: f136f7ab1cef38b4591e67b4c279455b, type: 2}
   spikes: {fileID: 1335503707901302, guid: 206b43699e80742abb29679f50d48792, type: 2}
   machinegun: {fileID: 1773913948203546, guid: 5c54e26ae547d5248a772e6ce03e6bd6, type: 2}
-  laser: {fileID: 1884173752083276, guid: 163f19aa01c0f4c7dac90673e14e50f2, type: 2}
+  laser: {fileID: 1493261759629418, guid: 939a627a9f12a694698540e29dd67990, type: 2}
 --- !u!1 &1389933849
 GameObject:
   m_ObjectHideFlags: 0

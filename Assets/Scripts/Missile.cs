@@ -7,12 +7,13 @@ public class Missile : MonoBehaviour {
     PlayerConroller playerController;
     public float speed = 3f;
     public float rotatingSpeed = 200f;
-    public GameObject _player;
+    GameObject _player;
     public GameObject boom;
     Rigidbody2D rb;
 	
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+        _player = GameObject.FindGameObjectWithTag("Player");
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
