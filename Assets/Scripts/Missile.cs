@@ -5,7 +5,7 @@ using UnityEngine;
 public class Missile : MonoBehaviour {
 
     PlayerConroller playerController;
-    public float speed = 5f;
+    public float speed = 3f;
     public float rotatingSpeed = 200f;
     public GameObject _player;
     public GameObject boom;
@@ -17,7 +17,8 @@ public class Missile : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 5)
+        playerController = collision.gameObject.GetComponent<PlayerConroller>();
+        if (collision.gameObject.tag == "Player")
         {
             Instantiate(boom, transform.position, Quaternion.identity);
             playerController.Kaboom();
