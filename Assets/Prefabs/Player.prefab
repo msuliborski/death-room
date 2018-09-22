@@ -119,8 +119,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b44a97f2de5cbeb4f97ebd576347b610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  blood: {fileID: 0}
+  player: {fileID: 1574551274979200}
+  blood: {fileID: 1627181372522262, guid: 3524dc9e070df8847b3956b1b26e123a, type: 2}
+  leg1: {fileID: 1315451669827406, guid: 8ee71147849d99a4480052b996977a6e, type: 2}
+  leg2: {fileID: 1803735993090294, guid: 5e2724f898bbbb9489fc29f40bcf7306, type: 2}
+  laserCut: {fileID: 1030925649698118, guid: 0904436ffd01747468682e2050b47462, type: 2}
+  _shot: {fileID: 1822878500395844, guid: 9b38b2f8701a465478a17e6dad026b3d, type: 2}
 --- !u!114 &114905262088984744
 MonoBehaviour:
   m_ObjectHideFlags: 1
