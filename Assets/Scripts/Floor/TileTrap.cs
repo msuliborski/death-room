@@ -6,6 +6,7 @@ public class TileTrap : MonoBehaviour {
 	
 	bool isTriggered = false;
  	SpriteRenderer spriteRenderer;
+    public GameObject trap;
 
     void Start(){
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -18,6 +19,7 @@ public class TileTrap : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D _colliderPlayer){
 		if(!isTriggered){
 			isTriggered = true;
+            trap.SetActive(true);
         	//spriteRenderer.color = new Color(0.1f, 0.4f, 0.255f, 1f);
         	spriteRenderer.color = Color.black;
 	 	}
