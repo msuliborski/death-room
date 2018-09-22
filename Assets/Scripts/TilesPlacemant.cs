@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TilesPlacemant : MonoBehaviour {
 
+	public List<GameObject> tilesBackup;
+
 	public GameObject Floor;
 	public GameObject empty;
 	public GameObject rocket;
@@ -31,20 +33,30 @@ public class TilesPlacemant : MonoBehaviour {
 				Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity);
 			}
 			for(float i = 1.8f; i < 10.2f; i += 2.4f){
-				if(randomVer >= (j-0.2) && randomVer <= (j+0.2)) Instantiate(empty, new Vector2(i, randomVer) + offset, Quaternion.identity);
-				else Instantiate(getRandomTile(), new Vector2(i, j) + offset, Quaternion.identity);
-				
+				if(randomVer >= (j-0.2) && randomVer <= (j+0.2)) {
+					Instantiate(empty, new Vector2(i, randomVer) + offset, Quaternion.identity);
+					tilesBackup.Add(empty);
+				} else {
+					GameObject g = getRandomTile();
+					Instantiate(g, new Vector2(i, j) + offset, Quaternion.identity);
+					tilesBackup.Add(g);
+				}
 			}
 		}
-
-		// for (float i = 1.8f; i < 10.2f; i += 1.2f){
-		// 	for(float j = 4.2f; j > -0.6f; j -= 1.2f){
-		// 		if ((i-0.6) % 1.2 == 0) {Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity); continue;}
-		// 		//positions.Add(new Vector2(i, j));
-		// 	}
-		// }
-		
 	}
+	
+	void restoreTiles(){
+		int k = 0;
+		for(float j = 4.2f; j > -0.6f; j -= 1.2f){
+			for(float i = 0.6f; i < 12.6f; i += 2.4f){
+				Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity);
+			}
+			for(float i = 1.8f; i < 10.2f; i += 2.4f){
+				Instantiate(tilesBackup[k], new Vector2(i, j) + offset, Quaternion.identity);
+			}
+		}
+	}
+	
 
 	GameObject getRandomTile() {
 		int randomNum = (int) (Random.Range(1, 7));
