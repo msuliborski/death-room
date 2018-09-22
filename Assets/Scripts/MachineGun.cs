@@ -4,42 +4,46 @@ using UnityEngine;
 
 public class MachineGun : MonoBehaviour
 {
-    public GameObject bullet;
-    public float firerate = 0.5f;
-    public float velocity = 15f;
-    public float rotationOffset = 5f;
-    bool flag = true;
-    public GameObject inst;
+    public GameObject Bullet;
+    public GameObject SpawnPoint;
+    public GameObject Player;
 
-    // Use this for initialization
+    public float firerate = 2f;
+    public float velocity = 15f;
+    public float rotationOffset = 0.4f;
+    public float ammunition = 10;
+
+    bool flag = true;
+
     void Start()
     {
-        
+        StartCoroutine(Cooldown(2));
     }
-
+    
     // Update is called once per frame
     void Update()
     {
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position; //zmienić na pozycję postaci
+        Vector2 direction = Player.transform.position - transform.position; 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationOffset * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
 
-        if (flag)
+        if (flag && ammunition >= 0)
         {
             direction.Normalize();
-            GameObject shot = (GameObject)Instantiate(bullet, inst.transform.position, Quaternion.identity);
-            shot.GetComponent<Rigidbody2D>().velocity = direction * velocity;
-            StartCoroutine(Cooldown());
-            Destroy(shot, 1);
+            GameObject shot = (GameObject)Instantiate(Bullet, SpawnPoint.transform.position, Quaternion.identity);
+            shot.GetComponent<Rigidbody2D>().velocity = transform.right * velocity;
+            StartCoroutine(Cooldown(1));
+            Destroy(shot, 5);
+            ammunition--;
         }
     }
 
-    IEnumerator Cooldown()
+    IEnumerator Cooldown(float time)
     {
         flag = false;
-        yield return new WaitForSeconds(firerate);
+        yield return new WaitForSeconds(time);
         flag = true;
     }
 }
