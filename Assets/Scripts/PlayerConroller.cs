@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerConroller : MonoBehaviour {
 
+    public GameObject player;
+    public GameObject blood;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
@@ -11,11 +13,12 @@ public class PlayerConroller : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+        if (Input.GetKeyDown(KeyCode.P)) Death();
 	}
 
 	public void Death()
 	{
-		Destroy(this);
+        Instantiate(blood, transform.position, Quaternion.identity);
+        player.SetActive(false);
 	}
 }
