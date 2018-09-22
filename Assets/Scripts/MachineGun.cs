@@ -6,7 +6,8 @@ public class MachineGun : MonoBehaviour
 {
     public GameObject Bullet;
     public GameObject SpawnPoint;
-    public GameObject Player;
+    
+    GameObject Player;
 
     public float firerate = 2f;
     public float velocity = 15f;
@@ -20,7 +21,7 @@ public class MachineGun : MonoBehaviour
 
     void Start()
     {
-              
+        Player = GameObject.FindWithTag("Player");
     }
     
     // Update is called once per frame
