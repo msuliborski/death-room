@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212331589612330692}
   - component: {fileID: 61705725744461248}
   - component: {fileID: 114365452014107920}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: TileLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}

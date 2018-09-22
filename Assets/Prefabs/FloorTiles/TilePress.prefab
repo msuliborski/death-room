@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212818334121707190}
   - component: {fileID: 61760506222948502}
   - component: {fileID: 114461263511048234}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: TilePress
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212752985389822226}
   - component: {fileID: 61316627543615396}
   - component: {fileID: 114514917758102158}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: TileTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212370891661096624}
   - component: {fileID: 61366246927950318}
   - component: {fileID: 114053010252990144}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: TileRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}

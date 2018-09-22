@@ -1313,7 +1313,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.013164043, y: 0}
+  m_Offset: {x: 0.0039129853, y: -0.39471382}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1324,7 +1324,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7630477, y: 1}
+  m_Size: {x: 0.4731797, y: 0.21057236}
   m_EdgeRadius: 0
 --- !u!1 &928008328
 GameObject:
@@ -1837,7 +1837,7 @@ MonoBehaviour:
   trap: {fileID: 1799472717552472, guid: 155dba16b529f4dc386408dcdf4bf130, type: 2}
   press: {fileID: 1809433052240208, guid: 44975056869fa4942ab187d283cb64f2, type: 2}
   spikes: {fileID: 1335503707901302, guid: 206b43699e80742abb29679f50d48792, type: 2}
-  machinegun: {fileID: 1957988130717812, guid: d58e7fd25587549eebc8c8ebc5d34e76, type: 2}
+  machinegun: {fileID: 1773913948203546, guid: 5c54e26ae547d5248a772e6ce03e6bd6, type: 2}
   laser: {fileID: 1884173752083276, guid: 163f19aa01c0f4c7dac90673e14e50f2, type: 2}
 --- !u!1 &1389933849
 GameObject:
@@ -2722,12 +2722,12 @@ Prefab:
     - target: {fileID: 61714227288694846, guid: 2d4e345f5028d4c5abf16f832b32a4c8,
         type: 2}
       propertyPath: m_Offset.y
-      value: -0.018805861
+      value: -0.04158151
       objectReference: {fileID: 0}
     - target: {fileID: 61714227288694846, guid: 2d4e345f5028d4c5abf16f832b32a4c8,
         type: 2}
       propertyPath: m_Size.y
-      value: 1.0203867
+      value: 0.9748354
       objectReference: {fileID: 0}
     - target: {fileID: 61714227288694846, guid: 2d4e345f5028d4c5abf16f832b32a4c8,
         type: 2}
