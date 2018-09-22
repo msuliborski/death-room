@@ -12,7 +12,7 @@ public class Cannon : MonoBehaviour {
 	}
 	IEnumerator Gun()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.75f);
         cannon.SetActive(true);
     }
 }
