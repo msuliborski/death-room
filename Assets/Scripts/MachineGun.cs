@@ -7,6 +7,8 @@ public class MachineGun : MonoBehaviour
     public GameObject Bullet;
     public GameObject SpawnPoint;
     public GameObject Player;
+    private AudioSource source;
+    public AudioClip clip;
 
     public float firerate = 2f;
     public float velocity = 15f;
@@ -20,7 +22,8 @@ public class MachineGun : MonoBehaviour
 
     void Start()
     {
-              
+        source = GetComponent<AudioSource>();
+        source.clip = clip;
     }
     
     // Update is called once per frame
@@ -48,6 +51,7 @@ public class MachineGun : MonoBehaviour
         {
             direction.Normalize();
             GameObject shot = (GameObject)Instantiate(Bullet, SpawnPoint.transform.position, Quaternion.identity);
+            source.PlayOneShot(source.clip);
             shot.GetComponent<Rigidbody2D>().velocity = transform.right * velocity;
             StartCoroutine(Cooldown(1));
             Destroy(shot, 5);
