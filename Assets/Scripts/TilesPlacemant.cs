@@ -58,14 +58,16 @@ public class TilesPlacemant : MonoBehaviour {
 		for(int i = 0; i < displayedTiles.Count; i++){
 			Destroy(displayedTiles[i]);
 		}
+		displayedTiles = new List<GameObject>();
 		for(float j = 4.2f; j > -0.6f; j -= 1.2f){
 			for(float i = 0.6f; i < 12.6f; i += 2.4f){
-				Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity);
+				displayedTiles.Add(Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity));
 			}
-			for(float i = 1.8f; i < 10.2f; i += 2.4f){
-				Instantiate(tilesBackup[k], new Vector2(i, j) + offset, Quaternion.identity);
+			for(float i = 1.8f; i < 10.2f; i += 2.4f, k++){
+				displayedTiles.Add(Instantiate(tilesBackup[k], new Vector2(i, j) + offset, Quaternion.identity));
 			}
 		}
+
 	}
 	
 
