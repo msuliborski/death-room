@@ -8,11 +8,20 @@ public class Lazers : MonoBehaviour {
 	public GameObject _lazerV;
 	public GameObject _lazerH;
     bool flag = false;
+    private AudioSource source;
+    public AudioClip clip;
 
-	void OnCollisionEnter2D(Collision2D collision)
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+        source.clip = clip;
+        source.PlayOneShot(source.clip);
+    }
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == 5)
         {
+            source.PlayOneShot(source.clip);
             flag = true;
             StartCoroutine(Cooldown());
             _lazerV.SetActive(true);
