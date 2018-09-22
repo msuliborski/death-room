@@ -12,15 +12,10 @@ public class TilesPlacemant : MonoBehaviour {
 	public GameObject spikes;
 	public GameObject machinegun;
 	public GameObject laser;
-
 	
 	Vector2 offset = new Vector2(1.22f, -0.1f);
 
 	void Start () {
-		
-		positions = new List<Vector2>();
-
-		
 		spawnTiles();
 	}
 
@@ -33,8 +28,7 @@ public class TilesPlacemant : MonoBehaviour {
 		float randomVer = (float)((int)((Random.Range(0, 3)))*1.2 + 0.6);
 		for(float j = 4.2f; j > -0.6f; j -= 1.2f){
 			for(float i = 0.6f; i < 12.6f; i += 2.4f){
-				GameObject d = Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity);
-				d.transform.SetParent(Floor);
+				Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity);
 			}
 			for(float i = 1.8f; i < 10.2f; i += 2.4f){
 				if(randomVer >= (j-0.2) && randomVer <= (j+0.2)) Instantiate(empty, new Vector2(i, randomVer) + offset, Quaternion.identity);
