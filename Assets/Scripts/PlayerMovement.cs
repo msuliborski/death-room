@@ -5,17 +5,23 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	Rigidbody2D _rigidbody;
+	public Animator _animator;
 
-	float maxForce = 1500f;
+	float maxForce = 150f;
 
 	void Start () {
 		_rigidbody = gameObject.GetComponent<Rigidbody2D>();
+        _animator = gameObject.GetComponent<Animator>();
 		_rigidbody.velocity = new Vector2(0, 0);
 	}
 	
+	
 	void LateUpdate () {
 
-		if (Input.GetKeyDown(KeyCode.W)) _rigidbody.AddForce(new Vector2(0, maxForce));
+		if (Input.GetKeyDown(KeyCode.W)) {
+			_rigidbody.AddForce(new Vector2(0, maxForce));
+			
+			}
 		if (Input.GetKeyUp(KeyCode.W)) _rigidbody.AddForce(new Vector2(0, -maxForce));
 
 		if (Input.GetKeyDown(KeyCode.S)) _rigidbody.AddForce(new Vector2(0, -maxForce));
