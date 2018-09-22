@@ -36,10 +36,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4508976974192760}
-  - component: {fileID: 114186869832957004}
   - component: {fileID: 50023949155669232}
   - component: {fileID: 212812074975347426}
   - component: {fileID: 95612560651204434}
+  - component: {fileID: 114864267149089016}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -137,7 +137,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114186869832957004
+--- !u!114 &114864267149089016
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,6 +151,7 @@ MonoBehaviour:
   speed: 5
   rotatingSpeed: 200
   _player: {fileID: 0}
+  boom: {fileID: 1405149261502532, guid: a5bea5ced9d78f248a2982aae68562cb, type: 2}
 --- !u!212 &212708665029405212
 SpriteRenderer:
   m_ObjectHideFlags: 1

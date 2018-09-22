@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Walls : MonoBehaviour {
 
+    PlayerConroller playerController;
     public GameObject wallUp;
     public GameObject wallDown;
     int flag = 0;
 
-    void Start()// void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        //if (collision.gameObject.layer == 5)
-      //  {
+        if (collision.gameObject.layer == 5)
+        {
             flag = 1;
+            playerController.Smash();
             StartCoroutine(Cooldown());
-       // }
+        }
     }
 
     void Update () {

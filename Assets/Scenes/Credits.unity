@@ -276,14 +276,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114186869832957004, guid: b25e903237c1a094d8d0cca2f671eda6,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: _player
       value: 
       objectReference: {fileID: 1854978179}
     - target: {fileID: 1728969590041390, guid: b25e903237c1a094d8d0cca2f671eda6, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b25e903237c1a094d8d0cca2f671eda6, type: 2}

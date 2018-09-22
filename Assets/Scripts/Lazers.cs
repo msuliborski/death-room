@@ -10,6 +10,7 @@ public class Lazers : MonoBehaviour {
     bool flag = false;
     private AudioSource source;
     public AudioClip clip;
+    
 
     private void Start()
     {

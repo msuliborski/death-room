@@ -22,5 +22,25 @@ public class PlayerConroller : MonoBehaviour {
         Instantiate(blood, transform.position, Quaternion.identity);
         player.SetActive(false);
 	}
+
+    public void Kaboom()
+    {
+
+    }
+
+    public void Lazers()
+    {
+
+    }
+
+    public void Smash()
+    {
+
+    }
+
+    public void Fall()
+    {
+
+    }
 }
 
