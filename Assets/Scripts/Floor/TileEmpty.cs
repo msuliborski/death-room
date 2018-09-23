@@ -31,7 +31,7 @@ public class TileEmpty : MonoBehaviour {
 	}
 
     public static float getAlphaRatio(Vector3 pos){
-        return 1 / Mathf.Abs((player.transform.position - pos).magnitude) - 0.3f;
+        return 1 / Mathf.Abs((player.transform.position - pos).magnitude) - 0.22f;
     }
 
 
