@@ -14,6 +14,7 @@ public class Missile : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         _player = GameObject.FindGameObjectWithTag("Player");
+        StartCoroutine(destroy());
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -45,4 +46,9 @@ public class Missile : MonoBehaviour {
         rb.velocity = -transform.right * speed;
     }
     
+    IEnumerator destroy()
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
+    }
 }

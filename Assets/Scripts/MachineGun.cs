@@ -10,7 +10,7 @@ public class MachineGun : MonoBehaviour
     GameObject Player;
 
     public float firerate = 2f;
-    public float velocity = 15f;
+    //public float velocity = 2f;
     public float rotationOffset = 0.4f;
     
     bool flag = true;
@@ -48,10 +48,14 @@ public class MachineGun : MonoBehaviour
         if (flag)
         {
             direction.Normalize();
-            GameObject shot = (GameObject)Instantiate(Bullet, SpawnPoint.transform.position, Quaternion.identity);
-            source.PlayOneShot(source.clip);
-            shot.GetComponent<Rigidbody2D>().velocity = transform.right * velocity;
-            StartCoroutine(Cooldown(1));
+            if(Mathf.Abs((Player.transform.position-transform.position).magnitude)<50)
+                {
+                GameObject shot = (GameObject)Instantiate(Bullet, SpawnPoint.transform.position, Quaternion.identity);
+                source.PlayOneShot(source.clip);
+                shot.GetComponent<Rigidbody2D>().velocity = transform.right * 5f;
+                Destroy(shot, 3f);
+                StartCoroutine(Cooldown(0.2f));
+            }
         }
     }
 }
