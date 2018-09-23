@@ -19,14 +19,12 @@ public class NextLevel : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-            
-		Debug.Log("drzwi");
-		GameObject.FindWithTag("Player").transform.position = new Vector2(1.658f, 2.204f);
+		TilesPlacemant.level++;
+		GameObject.FindWithTag("Player").transform.position = new Vector2(1.5f, 2.2f);
 		GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         source.PlayOneShot(source.clip);
+		TilesPlacemant.level++;
+		TilesPlacemant.calculateLevelLength();
 		TilesPlacemant.spawnTiles();
-
-
-
 	}
 }

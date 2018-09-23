@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TilesPlacemant : MonoBehaviour {
 
+	public static int level = 1;
+	static float lastTileX =  0;
+
 	public static List<GameObject> tilesBackup = new List<GameObject>();
 	public static List<GameObject> displayedTiles = new List<GameObject>();
 
@@ -15,28 +18,38 @@ public class TilesPlacemant : MonoBehaviour {
 	public static GameObject spikes;
 	public static GameObject machinegun;
 	public static GameObject laser;
+	public static GameObject door;
+	public static GameObject wall;
 	
 	public static Vector2 offset = new Vector2(1.22f, -0.1f);
 
+	public static GameObject doorOBJ;
+	static Vector2 doorPos;
+
+	public static GameObject wallOBJ;
+	static Vector2 wallPos;
+
 	void Start() {
+		calculateLevelLength();
 		getObj();
 		spawnTiles();
 	}
 
 	void Update() {
-		
+		calculateLevelLength();
 	}
 
 	public static void spawnTiles(){
+		PlayerConroller.deleteDeadBodies();
 		destroyDisplayedTiles();
 		destroyBackupTiles();
 		getObj();
 		float randomVer = (float)((int)((Random.Range(0, 3)))*1.2 + 0.6);
 		for(float j = 4.2f; j > -0.6f; j -= 1.2f){
-			for(float i = 0.6f; i < 12.6f; i += 2.4f){
+			for(float i = 0.6f; i < lastTileX+1; i += 2.4f){
 				displayedTiles.Add(Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity));
 			}
-			for(float i = 1.8f; i < 10.2f; i += 2.4f){
+			for(float i = 1.8f; i < lastTileX+1; i += 2.4f){
 				if(randomVer >= (j-0.2) && randomVer <= (j+0.2)) {
 					displayedTiles.Add(Instantiate(empty, new Vector2(i, randomVer) + offset, Quaternion.identity));
 					tilesBackup.Add(empty);
@@ -47,6 +60,8 @@ public class TilesPlacemant : MonoBehaviour {
 				}
 			}
 		}
+		doorOBJ = Instantiate(door, doorPos, Quaternion.identity);
+		wallOBJ = Instantiate(wall, wallPos, Quaternion.identity);
 	}
 	
 	public static void restoreTiles(){
@@ -54,14 +69,15 @@ public class TilesPlacemant : MonoBehaviour {
 		getObj();
 		int k = 0;
 		for(float j = 4.2f; j > -0.6f; j -= 1.2f){
-			for(float i = 0.6f; i < 12.6f; i += 2.4f){
+			for(float i = 0.6f; i < lastTileX+1; i += 2.4f){
 				displayedTiles.Add(Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity));
 			}
-			for(float i = 1.8f; i < 10.2f; i += 2.4f, k++){
+			for(float i = 1.8f; i < lastTileX+1; i += 2.4f, k++){
 				displayedTiles.Add(Instantiate(tilesBackup[k], new Vector2(i, j) + offset, Quaternion.identity));
 			}
 		}
-
+		doorOBJ = Instantiate(door, doorPos, Quaternion.identity);
+		wallOBJ = Instantiate(wall, wallPos, Quaternion.identity);
 	}
 
 	public static void destroyDisplayedTiles(){
@@ -69,6 +85,8 @@ public class TilesPlacemant : MonoBehaviour {
 			Destroy(displayedTiles[i]);
 		}
 		displayedTiles = new List<GameObject>();
+		Destroy(doorOBJ);
+		Destroy(wallOBJ);
 	}
 	
 
@@ -84,6 +102,14 @@ public class TilesPlacemant : MonoBehaviour {
 		spikes = GameObject.Find("/unityjestchujowe/TileSpikes");
 		machinegun = GameObject.Find("/unityjestchujowe/TileMachineGun");
 		laser = GameObject.Find("/unityjestchujowe/TileLaser");
+		door = GameObject.Find("/unityjestchujowe/doorExit");
+		wall = GameObject.Find("/unityjestchujowe/wall");
+	}
+
+	public static void calculateLevelLength(){
+		lastTileX = (float)(0.6 + (level + 3) * 1.2);
+		doorPos = new Vector2(lastTileX + 2, 3.24f);
+		wallPos = new Vector2(lastTileX + 2.5f, 2.41f);
 	}
 
 	static GameObject getRandomTile() {

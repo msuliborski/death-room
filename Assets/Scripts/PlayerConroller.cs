@@ -13,6 +13,8 @@ public class PlayerConroller : MonoBehaviour {
     public GameObject _shot;
     public AudioClip smash;
 
+    public static List<GameObject> deadBodies = new List<GameObject>();
+
     public GameObject start;
 
     AudioSource source;
@@ -31,24 +33,24 @@ public class PlayerConroller : MonoBehaviour {
     
     public void Kaboom()
     {
-        Instantiate(leg1, transform.position, Quaternion.identity);
-        Instantiate(leg2, new Vector3(transform.position.x-2, transform.position.y, transform.position.z), Quaternion.identity);
-        Instantiate(blood, transform.position, Quaternion.identity);
+        deadBodies.Add(Instantiate(leg1, transform.position, Quaternion.identity));
+        deadBodies.Add(Instantiate(leg2, new Vector3(transform.position.x-2, transform.position.y, transform.position.z), Quaternion.identity));
+        deadBodies.Add(Instantiate(blood, transform.position, Quaternion.identity));
         transform.position = new Vector2(100, 100);
         isDead = true;
     }
 
     public void Lazers()
     {
-        Instantiate(laserCut, transform.position, Quaternion.identity);
-        Instantiate(blood, transform.position, Quaternion.identity);
+        deadBodies.Add(Instantiate(laserCut, transform.position, Quaternion.identity));
+        deadBodies.Add(Instantiate(blood, transform.position, Quaternion.identity));
         transform.position = new Vector2(100, 100);
         isDead = true;
     }
 
     public void Smash()
     {
-        Instantiate(blood, transform.position, Quaternion.identity);
+        deadBodies.Add(Instantiate(blood, transform.position, Quaternion.identity));
         source.clip = smash;
         source.PlayOneShot(source.clip);
         
@@ -64,8 +66,8 @@ public class PlayerConroller : MonoBehaviour {
 
     public void shot()
     {
-        Instantiate(_shot, transform.position, Quaternion.identity);
-        Instantiate(blood, transform.position, Quaternion.identity);
+        deadBodies.Add(Instantiate(_shot, transform.position, Quaternion.identity));
+        deadBodies.Add(Instantiate(blood, transform.position, Quaternion.identity));
         transform.position = new Vector2(100, 100); 
         isDead = true;
     }
@@ -84,6 +86,12 @@ public class PlayerConroller : MonoBehaviour {
             //reset punktacji w gui
 
         }   
+    }
+
+    public static void deleteDeadBodies(){
+        for(int i = 0; i < deadBodies.Count; i++)
+            Destroy(deadBodies[i]);
+        deadBodies = new List<GameObject>(); 
     }
 
 }
