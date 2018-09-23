@@ -130,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1773913948203546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.67, y: -4.63, z: -0.034618832}
+  m_LocalPosition: {x: -49.670006, y: -0.42999983, z: -0.034618832}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4386813022897700}
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f799b7e16a268468662d79c8087f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 1766194417014692, guid: f14618aca552590468b19f01f48cc124, type: 2}
+  Bullet: {fileID: 1471709374226978, guid: f14618aca552590468b19f01f48cc124, type: 2}
   SpawnPoint: {fileID: 1750978446114468}
   firerate: 0.6
   velocity: 30
