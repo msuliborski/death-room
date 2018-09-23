@@ -8,16 +8,20 @@ public class TileEmpty : MonoBehaviour {
  	SpriteRenderer spriteRenderer;
     public AudioClip clip;
     AudioSource source;
+    GameObject player;
+    float ratio;
 
     void Start(){
         spriteRenderer = GetComponent<SpriteRenderer>();
         source = GetComponent<AudioSource>();
         source.clip = clip;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
 	void Update () {
-
-	}
+        ratio = 1 / Mathf.Abs((player.transform.position - transform.position).magnitude);
+        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, ratio);
+    }
 
 	void OnTriggerEnter2D(Collider2D _colliderPlayer){
 		if(!isTriggered){
