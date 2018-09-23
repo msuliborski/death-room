@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c600d3b65a24408994929198ecedc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: c5d42b8ee51231d41997c5acedfa36cb, type: 3}
+  clip: {fileID: 8300000, guid: c3d832f99021b3a409fe283896f3d68f, type: 3}
 --- !u!212 &212275116982913244
 SpriteRenderer:
   m_ObjectHideFlags: 1
