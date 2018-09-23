@@ -330,7 +330,7 @@ MonoBehaviour:
   leg1: {fileID: 1315451669827406, guid: 8ee71147849d99a4480052b996977a6e, type: 2}
   leg2: {fileID: 1803735993090294, guid: 5e2724f898bbbb9489fc29f40bcf7306, type: 2}
   laserCut: {fileID: 1030925649698118, guid: 0904436ffd01747468682e2050b47462, type: 2}
-  _shot: {fileID: 1822878500395844, guid: 9b38b2f8701a465478a17e6dad026b3d, type: 2}
+  _shot: {fileID: 1920793755847054, guid: 3d02a9eeee88da2478ee141f76c0a458, type: 2}
   smash: {fileID: 8300000, guid: a7dbf915c772d10498018a3f53f994e5, type: 3}
   start: {fileID: 0}
 --- !u!114 &114882918084710050

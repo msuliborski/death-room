@@ -116,7 +116,7 @@ public class TilesPlacemant : MonoBehaviour {
 	public static void calculateLevelLength(){
 		lastTileX = (float)(0.6 + (level + 3) * 1.2);
 		doorPos = new Vector2(lastTileX + 2, 3.24f);
-		wallPos = new Vector2(lastTileX + 2.5f, 2.41f);
+		wallPos = new Vector2(lastTileX + 2.25f, 2.48f);
 	}
 
 	static GameObject getRandomTile() {
