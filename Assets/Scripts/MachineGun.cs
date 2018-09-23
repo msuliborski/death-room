@@ -14,10 +14,14 @@ public class MachineGun : MonoBehaviour
     public float rotationOffset = 0.4f;
     
     bool flag = true;
+    public AudioClip clip;
+    AudioSource source;
 
     void Start()
     {
         Player = GameObject.FindWithTag("Player");
+        source = GetComponent<AudioSource>();
+        source.clip = clip;
     }
     
     // Update is called once per frame
@@ -45,6 +49,7 @@ public class MachineGun : MonoBehaviour
         {
             direction.Normalize();
             GameObject shot = (GameObject)Instantiate(Bullet, SpawnPoint.transform.position, Quaternion.identity);
+            source.PlayOneShot(source.clip);
             shot.GetComponent<Rigidbody2D>().velocity = transform.right * velocity;
             StartCoroutine(Cooldown(1));
         }
