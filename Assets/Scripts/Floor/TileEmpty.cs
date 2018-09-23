@@ -6,9 +6,13 @@ public class TileEmpty : MonoBehaviour {
 	
 	bool isTriggered = false;
  	SpriteRenderer spriteRenderer;
+    public AudioClip clip;
+    AudioSource source;
 
     void Start(){
         spriteRenderer = GetComponent<SpriteRenderer>();
+        source = GetComponent<AudioSource>();
+        source.clip = clip;
     }
 
 	void Update () {
@@ -20,6 +24,7 @@ public class TileEmpty : MonoBehaviour {
 			isTriggered = true;
         	//spriteRenderer.color = new Color(0.1f, 0.4f, 0.255f, 1f);
         	spriteRenderer.color = Color.green;
+            source.PlayOneShot(source.clip);
 	 	}
 	}
 }

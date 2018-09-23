@@ -113,6 +113,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &48381586
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4931546885537380, guid: 5c54e26ae547d5248a772e6ce03e6bd6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931546885537380, guid: 5c54e26ae547d5248a772e6ce03e6bd6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931546885537380, guid: 5c54e26ae547d5248a772e6ce03e6bd6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.034618832
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931546885537380, guid: 5c54e26ae547d5248a772e6ce03e6bd6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931546885537380, guid: 5c54e26ae547d5248a772e6ce03e6bd6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931546885537380, guid: 5c54e26ae547d5248a772e6ce03e6bd6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931546885537380, guid: 5c54e26ae547d5248a772e6ce03e6bd6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931546885537380, guid: 5c54e26ae547d5248a772e6ce03e6bd6, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773913948203546, guid: 5c54e26ae547d5248a772e6ce03e6bd6, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5c54e26ae547d5248a772e6ce03e6bd6, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &902982181
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +291,7 @@ Prefab:
         type: 2}
       propertyPath: smash
       value: 
-      objectReference: {fileID: 8300000, guid: 44e9aa4bff79a0d4cb2362ea7ffd4ba9, type: 3}
+      objectReference: {fileID: 8300000, guid: a7dbf915c772d10498018a3f53f994e5, type: 3}
     - target: {fileID: 114502714148904978, guid: 2d4e345f5028d4c5abf16f832b32a4c8,
         type: 2}
       propertyPath: over
@@ -341,7 +387,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1389100888967012, guid: f136f7ab1cef38b4591e67b4c279455b, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f136f7ab1cef38b4591e67b4c279455b, type: 2}

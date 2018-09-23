@@ -276,8 +276,8 @@ MonoBehaviour:
   leg2: {fileID: 1803735993090294, guid: 5e2724f898bbbb9489fc29f40bcf7306, type: 2}
   laserCut: {fileID: 1030925649698118, guid: 0904436ffd01747468682e2050b47462, type: 2}
   _shot: {fileID: 1822878500395844, guid: 9b38b2f8701a465478a17e6dad026b3d, type: 2}
-  over: {fileID: 0}
-  smash: {fileID: 0}
+  over: {fileID: 8300000, guid: 40abe1aa317397a46851f4f4f03fb146, type: 3}
+  smash: {fileID: 8300000, guid: a7dbf915c772d10498018a3f53f994e5, type: 3}
 --- !u!114 &114882918084710050
 MonoBehaviour:
   m_ObjectHideFlags: 1
