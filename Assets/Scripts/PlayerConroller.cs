@@ -12,6 +12,7 @@ public class PlayerConroller : MonoBehaviour {
     public GameObject laserCut;
     public GameObject _shot;
     public AudioClip smash;
+   
 
     public static List<GameObject> deadBodies = new List<GameObject>();
 
@@ -38,6 +39,8 @@ public class PlayerConroller : MonoBehaviour {
         deadBodies.Add(Instantiate(blood, transform.position, Quaternion.identity));
         transform.position = new Vector2(100, 100);
         isDead = true;
+        DeathCounter.score++;
+        
     }
 
     public void Lazers()
@@ -46,6 +49,7 @@ public class PlayerConroller : MonoBehaviour {
         deadBodies.Add(Instantiate(blood, transform.position, Quaternion.identity));
         transform.position = new Vector2(100, 100);
         isDead = true;
+        DeathCounter.score++;
     }
 
     public void Smash()
@@ -56,12 +60,14 @@ public class PlayerConroller : MonoBehaviour {
         
         transform.position = new Vector2(100, 100);
         isDead = true;
+        DeathCounter.score++;
     }
 
     public void Fall()
     {
         transform.position = new Vector2(100, 100);
         isDead = true;
+        DeathCounter.score++;
     }
 
     public void shot()
@@ -70,6 +76,7 @@ public class PlayerConroller : MonoBehaviour {
         deadBodies.Add(Instantiate(blood, transform.position, Quaternion.identity));
         transform.position = new Vector2(100, 100); 
         isDead = true;
+        DeathCounter.score++;
     }
 
     void enableResetGame(){
