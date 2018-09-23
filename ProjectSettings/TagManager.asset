@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - machineGun
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - TileEmpty
   - Player
-  - 
-  - 
+  - Lethal
+  - Bullet
   - 
   - 
   - 

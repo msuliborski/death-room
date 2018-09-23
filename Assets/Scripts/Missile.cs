@@ -4,20 +4,33 @@ using UnityEngine;
 
 public class Missile : MonoBehaviour {
 
-    public float speed = 5f;
+    PlayerConroller playerController;
+    public float speed = 3f;
     public float rotatingSpeed = 200f;
-    public GameObject _player;
+    GameObject _player;
+    public GameObject boom;
     Rigidbody2D rb;
 	
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+        _player = GameObject.FindGameObjectWithTag("Player");
 	}
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        playerController = collision.gameObject.GetComponent<PlayerConroller>();
+        if (collision.gameObject.tag == "Player")
+        {
+            Instantiate(boom, transform.position, Quaternion.identity);
+            playerController.Kaboom();
+            Destroy(gameObject);
+        }
+    }
     private void FixedUpdate()
     {
         Vector2 point2target = (Vector2)transform.position - (Vector2)_player.transform.position;
         point2target.Normalize();
-        float value = Vector3.Cross(point2target, transform.up).z;
+        float value = Vector3.Cross(point2target, -transform.right).z;
         if (value > 0)
         {
             rb.angularVelocity = rotatingSpeed;
@@ -29,7 +42,7 @@ public class Missile : MonoBehaviour {
         else
             rb.angularVelocity = 0;
 
-        rb.velocity = transform.up * speed;
+        rb.velocity = -transform.right * speed;
     }
     
 }

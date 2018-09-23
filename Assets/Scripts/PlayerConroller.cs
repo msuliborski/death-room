@@ -3,19 +3,96 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerConroller : MonoBehaviour {
+    
+    private DeathManager dm;
+    public GameObject player;
+    public GameObject blood;
+    public GameObject leg1;
+    public GameObject leg2;
+    public GameObject laserCut;
+    public GameObject _shot;
+    public AudioClip smash;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public static List<GameObject> deadBodies = new List<GameObject>();
 
-	public void Death()
-	{
-		Destroy(this);
-	}
+    public GameObject start;
+
+    AudioSource source;
+
+    bool isDead;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+        
+    }
+
+    private void Update() {
+        if(isDead) enableResetGame();
+    }
+    
+    public void Kaboom()
+    {
+        deadBodies.Add(Instantiate(leg1, transform.position, Quaternion.identity));
+        deadBodies.Add(Instantiate(leg2, new Vector3(transform.position.x-2, transform.position.y, transform.position.z), Quaternion.identity));
+        deadBodies.Add(Instantiate(blood, transform.position, Quaternion.identity));
+        transform.position = new Vector2(100, 100);
+        isDead = true;
+    }
+
+    public void Lazers()
+    {
+        deadBodies.Add(Instantiate(laserCut, transform.position, Quaternion.identity));
+        deadBodies.Add(Instantiate(blood, transform.position, Quaternion.identity));
+        transform.position = new Vector2(100, 100);
+        isDead = true;
+    }
+
+    public void Smash()
+    {
+        deadBodies.Add(Instantiate(blood, transform.position, Quaternion.identity));
+        source.clip = smash;
+        source.PlayOneShot(source.clip);
+        
+        transform.position = new Vector2(100, 100);
+        isDead = true;
+    }
+
+    public void Fall()
+    {
+        transform.position = new Vector2(100, 100);
+        isDead = true;
+    }
+
+    public void shot()
+    {
+        deadBodies.Add(Instantiate(_shot, transform.position, Quaternion.identity));
+        deadBodies.Add(Instantiate(blood, transform.position, Quaternion.identity));
+        transform.position = new Vector2(100, 100); 
+        isDead = true;
+    }
+
+    void enableResetGame(){
+        //opcja resetu na przycisk?
+        start.SetActive(true);
+
+        if(Input.GetKeyDown(KeyCode.H)) {
+            start.SetActive(false);
+            isDead = false;
+            
+            transform.position = new Vector2(1.5f, 2.2f);
+            //tilesPlacement.restoreTiles();
+            TilesPlacemant.restoreTiles();
+            //reset punktacji w gui
+
+        }   
+    }
+
+    public static void deleteDeadBodies(){
+        for(int i = 0; i < deadBodies.Count; i++)
+            Destroy(deadBodies[i]);
+        deadBodies = new List<GameObject>(); 
+    }
+
 }
+
