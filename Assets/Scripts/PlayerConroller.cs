@@ -11,7 +11,6 @@ public class PlayerConroller : MonoBehaviour {
     public GameObject leg2;
     public GameObject laserCut;
     public GameObject _shot;
-    public AudioClip over;
     public AudioClip smash;
 
     public GameObject start;
@@ -23,7 +22,7 @@ public class PlayerConroller : MonoBehaviour {
     private void Start()
     {
         source = GetComponent<AudioSource>();
-        source.clip = over;
+        
     }
 
     private void Update() {
@@ -52,7 +51,7 @@ public class PlayerConroller : MonoBehaviour {
         Instantiate(blood, transform.position, Quaternion.identity);
         source.clip = smash;
         source.PlayOneShot(source.clip);
-        source.clip = over;
+        
         transform.position = new Vector2(100, 100);
         isDead = true;
     }
@@ -78,7 +77,7 @@ public class PlayerConroller : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.H)) {
             start.SetActive(false);
             isDead = false;
-            source.PlayOneShot(source.clip);
+            
             transform.position = new Vector2(1.658f, 2.204f);
             //tilesPlacement.restoreTiles();
             TilesPlacemant.restoreTiles();
