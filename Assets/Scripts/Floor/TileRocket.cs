@@ -7,13 +7,15 @@ public class TileRocket : MonoBehaviour {
 	bool isTriggered = false;
  	SpriteRenderer spriteRenderer;
     public GameObject launcher;
+    
 
     void Start(){
         spriteRenderer = GetComponent<SpriteRenderer>();
+        
     }
 
 	void Update () {
-
+        
 	}
 
 	void OnTriggerEnter2D(Collider2D _colliderPlayer){
