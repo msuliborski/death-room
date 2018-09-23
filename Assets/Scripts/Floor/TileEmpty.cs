@@ -8,8 +8,7 @@ public class TileEmpty : MonoBehaviour {
  	SpriteRenderer spriteRenderer;
     public AudioClip clip;
     AudioSource source;
-    GameObject player;
-    float ratio;
+    static GameObject player;
 
     void Start(){
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -19,18 +18,23 @@ public class TileEmpty : MonoBehaviour {
     }
 
 	void Update () {
-        ratio = 1 / Mathf.Abs((player.transform.position - transform.position).magnitude);
-        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, ratio);
+		if (Mathf.Abs((transform.position - player.transform.position).magnitude) < 50)
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, TileEmpty.getAlphaRatio(transform.position));
     }
 
 	void OnTriggerEnter2D(Collider2D _colliderPlayer){
 		if(!isTriggered){
 			isTriggered = true;
         	//spriteRenderer.color = new Color(0.1f, 0.4f, 0.255f, 1f);
-        	spriteRenderer.color = Color.green;
             source.PlayOneShot(source.clip);
 	 	}
 	}
+
+    public static float getAlphaRatio(Vector3 pos){
+        return 1 / Mathf.Abs((player.transform.position - pos).magnitude) - 0.3f;
+    }
+
+
 }
 
 
