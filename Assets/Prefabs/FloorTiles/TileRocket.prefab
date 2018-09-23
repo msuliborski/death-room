@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4892628374853730}
   - component: {fileID: 212380344269586262}
   - component: {fileID: 61805755647923252}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 95925365853457916}
   - component: {fileID: 114807604940190726}
   - component: {fileID: 82336679366122918}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388639327196550}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.0456076, y: -3.9868522, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4523722005514192}

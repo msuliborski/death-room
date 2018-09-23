@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61143780919888754}
   - component: {fileID: 114590460432624820}
   - component: {fileID: 82606151408270722}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: doorExit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -1.4668784, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -95,7 +95,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15555556, y: 1.2888889}
+  m_Size: {x: 3.0893126, y: 1.2888889}
   m_EdgeRadius: 0
 --- !u!82 &82606151408270722
 AudioSource:

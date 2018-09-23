@@ -16,6 +16,7 @@ public class Camera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void LateUpdate () {
-		transform.position = new Vector3(_player.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z) + offset;
+		if (Mathf.Abs((transform.position - _player.transform.position).magnitude) < 100)
+			transform.position = new Vector3(_player.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z) + offset;
 	}
 }

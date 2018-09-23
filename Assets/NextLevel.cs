@@ -22,6 +22,7 @@ public class NextLevel : MonoBehaviour {
             
 		Debug.Log("drzwi");
 		GameObject.FindWithTag("Player").transform.position = new Vector2(1.658f, 2.204f);
+		GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         source.PlayOneShot(source.clip);
 		TilesPlacemant.spawnTiles();
 
