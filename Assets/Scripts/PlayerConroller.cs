@@ -11,8 +11,17 @@ public class PlayerConroller : MonoBehaviour {
     public GameObject leg2;
     public GameObject laserCut;
     public GameObject _shot;
+    public AudioClip over;
+    public AudioClip smash;
+    AudioSource source;
 
     bool isDead;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+        source.clip = over;
+    }
 
     private void Update() {
         if(isDead) enableResetGame();
@@ -38,6 +47,9 @@ public class PlayerConroller : MonoBehaviour {
     public void Smash()
     {
         Instantiate(blood, transform.position, Quaternion.identity);
+        source.clip = smash;
+        source.PlayOneShot(source.clip);
+        source.clip = over;
         transform.position = new Vector2(100, 100);
         isDead = true;
     }
@@ -60,6 +72,7 @@ public class PlayerConroller : MonoBehaviour {
         //opcja resetu na przycisk?
         if(Input.GetKeyDown(KeyCode.H)) {
             isDead = false;
+            source.PlayOneShot(source.clip);
             transform.position = new Vector2(1.658f, 2.204f);
             //tilesPlacement.restoreTiles();
             TilesPlacemant.restoreTiles();
