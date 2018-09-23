@@ -13,6 +13,9 @@ public class PlayerConroller : MonoBehaviour {
     public GameObject _shot;
     public AudioClip over;
     public AudioClip smash;
+
+    public GameObject start;
+
     AudioSource source;
 
     bool isDead;
@@ -70,7 +73,10 @@ public class PlayerConroller : MonoBehaviour {
 
     void enableResetGame(){
         //opcja resetu na przycisk?
+        start.SetActive(true);
+
         if(Input.GetKeyDown(KeyCode.H)) {
+            start.SetActive(false);
             isDead = false;
             source.PlayOneShot(source.clip);
             transform.position = new Vector2(1.658f, 2.204f);

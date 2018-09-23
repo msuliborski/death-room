@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class startScript : MonoBehaviour {
 	GameObject _player;
+
+	bool initialized = false;
 	// Use this for initialization
 	void Start () {
 		_player = GameObject.FindGameObjectWithTag("Player");
@@ -11,7 +13,8 @@ public class startScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)){
+		if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)) && !initialized){
+			initialized = true;
 			_player.transform.position = new Vector2(1.63f, 2.2f);
 			gameObject.SetActive(false);
 		}
