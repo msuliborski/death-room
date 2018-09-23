@@ -15,6 +15,7 @@ public class startScript : MonoBehaviour {
 	void Update () {
 		if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)) && !initialized){
 			initialized = true;
+			_player.GetComponent<Rigidbody2D>().isKinematic = false;
 			_player.transform.position = new Vector2(1.63f, 2.2f);
 			gameObject.SetActive(false);
 		}

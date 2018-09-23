@@ -11,12 +11,12 @@ public class Camera : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _player = GameObject.FindGameObjectWithTag("Player");
-        offset = new Vector3(gameObject.transform.position.x - _player.transform.position.x, 0, 0);
+        offset = new Vector3(gameObject.transform.position.x - _player.transform.position.x - 0.8f, 0, 0);
 	}
 	
 	// Update is called once per frame
 	void LateUpdate () {
-		if (Mathf.Abs((transform.position - _player.transform.position).magnitude) < 100)
+		if (Mathf.Abs((transform.position - _player.transform.position).magnitude) < 50)
 			transform.position = new Vector3(_player.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z) + offset;
 	}
 }

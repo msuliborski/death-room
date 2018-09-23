@@ -78,7 +78,7 @@ public class PlayerConroller : MonoBehaviour {
             start.SetActive(false);
             isDead = false;
             
-            transform.position = new Vector2(1.658f, 2.204f);
+            transform.position = new Vector2(1.5f, 2.2f);
             //tilesPlacement.restoreTiles();
             TilesPlacemant.restoreTiles();
             //reset punktacji w gui

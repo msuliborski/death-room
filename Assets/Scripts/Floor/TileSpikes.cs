@@ -36,7 +36,8 @@ public class TileSpikes : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
         collider.SetActive(true);
         Instantiate(boom, transform.position, Quaternion.identity);
-
+        yield return new WaitForSeconds(0.5f);
+        collider.SetActive(false);
 
     }
 }

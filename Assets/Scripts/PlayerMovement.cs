@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	Rigidbody2D _rigidbody;
     public Animator animator;
-	float vel = 4f;
+	float vel = 3.3f;
 
 	void Start () {
 		// StartCoroutine(Example());
