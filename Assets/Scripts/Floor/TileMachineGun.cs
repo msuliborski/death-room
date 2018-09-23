@@ -13,8 +13,8 @@ public class TileMachineGun : MonoBehaviour {
      }
 
 	void Update () {
-       
     }
+    
     IEnumerator Cooldown(float time)
     {
         flag = false;

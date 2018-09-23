@@ -44,14 +44,17 @@ public class TilesPlacemant : MonoBehaviour {
 		destroyDisplayedTiles();
 		destroyBackupTiles();
 		getObj();
-		float randomVer = (float)((int)((Random.Range(0, 3)))*1.2 + 0.6);
-		for(float j = 4.2f; j > -0.6f; j -= 1.2f){
-			for(float i = 0.6f; i < lastTileX+1; i += 2.4f){
+		for(float i = 0.6f; i < lastTileX+1; i += 2.4f){
+			for(float j = 4.2f; j > -0.6f; j -= 1.2f){
 				displayedTiles.Add(Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity));
 			}
-			for(float i = 1.8f; i < lastTileX+1; i += 2.4f){
+		}
+
+		for(float i = 1.8f; i < lastTileX+1; i += 2.4f){	
+			float randomVer = (float)((int)((Random.Range(0, 3)))*1.2 + 0.6);
+			for(float j = 4.2f; j > -0.6f; j -= 1.2f){
 				if(randomVer >= (j-0.2) && randomVer <= (j+0.2)) {
-					displayedTiles.Add(Instantiate(empty, new Vector2(i, randomVer) + offset, Quaternion.identity));
+					displayedTiles.Add(Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity));
 					tilesBackup.Add(empty);
 				} else {
 					GameObject g = getRandomTile();
@@ -60,6 +63,7 @@ public class TilesPlacemant : MonoBehaviour {
 				}
 			}
 		}
+		Debug.Log(tilesBackup.Count);
 		doorOBJ = Instantiate(door, doorPos, Quaternion.identity);
 		wallOBJ = Instantiate(wall, wallPos, Quaternion.identity);
 	}
@@ -67,13 +71,16 @@ public class TilesPlacemant : MonoBehaviour {
 	public static void restoreTiles(){
 		destroyDisplayedTiles();
 		getObj();
-		int k = 0;
-		for(float j = 4.2f; j > -0.6f; j -= 1.2f){
-			for(float i = 0.6f; i < lastTileX+1; i += 2.4f){
+		for(float i = 0.6f; i < lastTileX+1; i += 2.4f){
+			for(float j = 4.2f; j > -0.6f; j -= 1.2f){
 				displayedTiles.Add(Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity));
 			}
-			for(float i = 1.8f; i < lastTileX+1; i += 2.4f, k++){
-				displayedTiles.Add(Instantiate(tilesBackup[k], new Vector2(i, j) + offset, Quaternion.identity));
+		}
+
+		int k = 0;
+		for(float i = 1.8f; i < lastTileX+1; i += 2.4f){
+			for(float j = 4.2f; j > -0.6f; j -= 1.2f){
+				displayedTiles.Add(Instantiate(tilesBackup[k++], new Vector2(i, j) + offset, Quaternion.identity));
 			}
 		}
 		doorOBJ = Instantiate(door, doorPos, Quaternion.identity);

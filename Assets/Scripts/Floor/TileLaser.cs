@@ -6,7 +6,7 @@ public class TileLaser : MonoBehaviour {
 	
 	bool isTriggered = false;
  	SpriteRenderer spriteRenderer;
-    GameObject _player;
+    GameObject player;
     public GameObject _lazerV;
     public GameObject _lazerH;
     bool flag = false;
@@ -17,6 +17,7 @@ public class TileLaser : MonoBehaviour {
         spriteRenderer = GetComponent<SpriteRenderer>();
         source = GetComponent<AudioSource>();
         source.clip = clip;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
 	void Update () {
@@ -25,6 +26,8 @@ public class TileLaser : MonoBehaviour {
             _lazerV.transform.position = new Vector2(_lazerV.transform.position.x - 0.03f, _lazerV.transform.position.y);
             _lazerH.transform.position = new Vector2(_lazerH.transform.position.x, _lazerH.transform.position.y + 0.03f);
         }
+		if (Mathf.Abs((transform.position - player.transform.position).magnitude) < 50)
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, TileEmpty.getAlphaRatio(transform.position));
     }
 
 	void OnTriggerEnter2D(Collider2D _colliderPlayer){
