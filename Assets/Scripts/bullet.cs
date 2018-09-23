@@ -17,4 +17,12 @@ public class bullet : MonoBehaviour {
 
         Destroy(this.gameObject);
     }
+    public void OnCollisionEnter2D(Collision2D colliderPlayer)
+    {
+        Instantiate(explosion, this.transform.position, Quaternion.identity);
+
+        //_playerController.shot();
+
+        Destroy(this.gameObject);
+    }
 }
