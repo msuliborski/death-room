@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour {
 	float vel = 3.3f;
 
 	void Start () {
+        Debug.Log("wdwd");
 		// StartCoroutine(Example());
 		_rigidbody = gameObject.GetComponent<Rigidbody2D>();
 		//_rigidbody.isKinematic = true;
