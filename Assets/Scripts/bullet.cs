@@ -5,24 +5,16 @@ using UnityEngine;
 public class bullet : MonoBehaviour {
     bool isTriggered = false;
     public GameObject explosion;
-    PlayerConroller _playerController;
+    PlayerConroller playerController;
 
-    // Use this for initialization
-
-    public void OnTriggerEnter2D(Collider2D colliderPlayer)
+    
+    public void OnCollisionEnter2D(Collision2D collision)
     {
+        playerController = collision.gameObject.GetComponent<PlayerConroller>();
         Instantiate(explosion, this.transform.position, Quaternion.identity);
 
-        //_playerController.shot();
+        playerController.shot();
 
-        Destroy(this.gameObject);
-    }
-    public void OnCollisionEnter2D(Collision2D colliderPlayer)
-    {
-        Instantiate(explosion, this.transform.position, Quaternion.identity);
-
-        //_playerController.shot();
-
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }
