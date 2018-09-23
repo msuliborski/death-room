@@ -18,14 +18,8 @@ public class TilesPlacemant : MonoBehaviour {
 	
 	public static Vector2 offset = new Vector2(1.22f, -0.1f);
 
-	void Start () {
-		empty = GameObject.Find("/unityjestchujowe/TileEmpty");
-		rocket = GameObject.Find("/unityjestchujowe/TileRocket");
-		trap = GameObject.Find("/unityjestchujowe/TileTrap");
-		press = GameObject.Find("/unityjestchujowe/TilePress");
-		spikes = GameObject.Find("/unityjestchujowe/TileSpikes");
-		machinegun = GameObject.Find("/unityjestchujowe/TileMachineGun");
-		laser = GameObject.Find("/unityjestchujowe/TileLaser");
+	void Start() {
+		getObj();
 		spawnTiles();
 	}
 
@@ -33,8 +27,10 @@ public class TilesPlacemant : MonoBehaviour {
 		
 	}
 
-	static void spawnTiles(){
-
+	public static void spawnTiles(){
+		destroyDisplayedTiles();
+		destroyBackupTiles();
+		getObj();
 		float randomVer = (float)((int)((Random.Range(0, 3)))*1.2 + 0.6);
 		for(float j = 4.2f; j > -0.6f; j -= 1.2f){
 			for(float i = 0.6f; i < 12.6f; i += 2.4f){
@@ -54,11 +50,9 @@ public class TilesPlacemant : MonoBehaviour {
 	}
 	
 	public static void restoreTiles(){
+		destroyDisplayedTiles();
+		getObj();
 		int k = 0;
-		for(int i = 0; i < displayedTiles.Count; i++){
-			Destroy(displayedTiles[i]);
-		}
-		displayedTiles = new List<GameObject>();
 		for(float j = 4.2f; j > -0.6f; j -= 1.2f){
 			for(float i = 0.6f; i < 12.6f; i += 2.4f){
 				displayedTiles.Add(Instantiate(empty, new Vector2(i, j) + offset, Quaternion.identity));
@@ -69,10 +63,31 @@ public class TilesPlacemant : MonoBehaviour {
 		}
 
 	}
+
+	public static void destroyDisplayedTiles(){
+		for(int i = 0; i < displayedTiles.Count; i++){
+			Destroy(displayedTiles[i]);
+		}
+		displayedTiles = new List<GameObject>();
+	}
 	
 
+	public static void destroyBackupTiles(){
+		tilesBackup = new List<GameObject>();
+	}
+
+	public static void getObj(){
+		empty = GameObject.Find("/unityjestchujowe/TileEmpty");
+		rocket = GameObject.Find("/unityjestchujowe/TileRocket");
+		trap = GameObject.Find("/unityjestchujowe/TileTrap");
+		press = GameObject.Find("/unityjestchujowe/TilePress");
+		spikes = GameObject.Find("/unityjestchujowe/TileSpikes");
+		machinegun = GameObject.Find("/unityjestchujowe/TileMachineGun");
+		laser = GameObject.Find("/unityjestchujowe/TileLaser");
+	}
+
 	static GameObject getRandomTile() {
-		int randomNum = (int) (Random.Range(1, 7));
+		int randomNum = (int) (Random.Range(1, 7.49f));
 		GameObject randomTile = empty;
 		switch(randomNum){
 			case 1: return randomTile;
