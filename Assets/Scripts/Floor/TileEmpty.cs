@@ -26,6 +26,7 @@ public class TileEmpty : MonoBehaviour {
 		if(!isTriggered){
 			isTriggered = true;
         	//spriteRenderer.color = new Color(0.1f, 0.4f, 0.255f, 1f);
+        	spriteRenderer.color = Color.green;
             source.PlayOneShot(source.clip);
 	 	}
 	}

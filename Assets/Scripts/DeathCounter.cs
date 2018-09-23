@@ -16,6 +16,6 @@ public class DeathCounter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        counter.text = "" + score;
+        counter.text = "Death #" + score;
 	}
 }

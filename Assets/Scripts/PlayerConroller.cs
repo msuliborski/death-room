@@ -34,8 +34,8 @@ public class PlayerConroller : MonoBehaviour {
     
     public void Kaboom()
     {
-        deadBodies.Add(Instantiate(leg1, transform.position, Quaternion.identity));
-        deadBodies.Add(Instantiate(leg2, new Vector3(transform.position.x-2, transform.position.y, transform.position.z), Quaternion.identity));
+        //deadBodies.Add(Instantiate(leg1, transform.position, Quaternion.identity));
+        //deadBodies.Add(Instantiate(leg2, new Vector3(transform.position.x-2, transform.position.y, transform.position.z), Quaternion.identity));
         deadBodies.Add(Instantiate(blood, transform.position, Quaternion.identity));
         transform.position = new Vector2(100, 100);
         isDead = true;
@@ -45,7 +45,7 @@ public class PlayerConroller : MonoBehaviour {
 
     public void Lazers()
     {
-        deadBodies.Add(Instantiate(laserCut, transform.position, Quaternion.identity));
+        //deadBodies.Add(Instantiate(laserCut, transform.position, Quaternion.identity));
         deadBodies.Add(Instantiate(blood, transform.position, Quaternion.identity));
         transform.position = new Vector2(100, 100);
         isDead = true;
@@ -72,7 +72,7 @@ public class PlayerConroller : MonoBehaviour {
 
     public void shot()
     {
-        deadBodies.Add(Instantiate(_shot, transform.position, Quaternion.identity));
+        //deadBodies.Add(Instantiate(_shot, transform.position, Quaternion.identity));
         deadBodies.Add(Instantiate(blood, transform.position, Quaternion.identity));
         transform.position = new Vector2(100, 100); 
         isDead = true;
@@ -83,7 +83,7 @@ public class PlayerConroller : MonoBehaviour {
         //opcja resetu na przycisk?
         start.SetActive(true);
 
-        if(Input.GetKeyDown(KeyCode.H)) {
+        if(Input.GetKeyDown(KeyCode.Space)) {
             start.SetActive(false);
             isDead = false;
             
