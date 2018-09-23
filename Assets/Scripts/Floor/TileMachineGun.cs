@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class TileMachineGun : MonoBehaviour {
 	public bool isTriggered = false;
-    public GameObject turret;
-    public GameObject cannon;
-
+    
     SpriteRenderer spriteRenderer;
     bool flag = false;
   
