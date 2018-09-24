@@ -19,4 +19,11 @@ public class Camera : MonoBehaviour {
 		if (Mathf.Abs((transform.position - _player.transform.position).magnitude) < 50)
 			transform.position = new Vector3(_player.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z) + offset;
 	}
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.LoadLevel(0);
+        }
+    }
 }

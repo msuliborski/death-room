@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 114729194557119680}
   m_Layer: 0
   m_Name: wall_down
-  m_TagString: Untagged
+  m_TagString: Press
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 114230971127023986}
   m_Layer: 0
   m_Name: wall_up
-  m_TagString: Untagged
+  m_TagString: Press
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -26,9 +26,12 @@ public class TilePress : MonoBehaviour {
             wallDown.transform.position = new Vector2(wallDown.transform.position.x, wallDown.transform.position.y + 0.5f);
         }
         else if (flag == -1){
+            StartCoroutine(Cooldown());
             wallUp.transform.position = new Vector2(wallUp.transform.position.x, wallUp.transform.position.y + 0.5f);
             wallDown.transform.position = new Vector2(wallDown.transform.position.x, wallDown.transform.position.y - 0.5f);
         }
+        
+
     }
 
     void OnTriggerEnter2D(Collider2D _colliderPlayer){
@@ -39,16 +42,18 @@ public class TilePress : MonoBehaviour {
         {
             isTriggered = true;
             flag = 1;
-            StartCoroutine(Cooldown());
+            
             
         }
 
     }
     IEnumerator Cooldown()
     {
-        yield return new WaitForSeconds(0.25f);
-        flag = -1;
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.8f);
         flag = 0;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Press") flag = -1;
     }
 }

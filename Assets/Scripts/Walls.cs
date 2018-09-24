@@ -22,21 +22,21 @@ public class Walls : MonoBehaviour {
     void Update () {
 		if(flag == 1)
         {
-            wallUp.transform.position = new Vector2(wallUp.transform.position.x, wallUp.transform.position.y - 0.5f);
-            wallDown.transform.position = new Vector2(wallDown.transform.position.x, wallDown.transform.position.y + 0.5f);
+            wallUp.transform.position = new Vector2(wallUp.transform.position.x, wallUp.transform.position.y - 0.6f);
+            wallDown.transform.position = new Vector2(wallDown.transform.position.x, wallDown.transform.position.y + 0.6f);
         }
         else if (flag == -1)
         {
-            wallUp.transform.position = new Vector2(wallUp.transform.position.x, wallUp.transform.position.y + 0.5f);
-            wallDown.transform.position = new Vector2(wallDown.transform.position.x, wallDown.transform.position.y - 0.5f);
+            wallUp.transform.position = new Vector2(wallUp.transform.position.x, wallUp.transform.position.y + 0.6f);
+            wallDown.transform.position = new Vector2(wallDown.transform.position.x, wallDown.transform.position.y - 0.6f);
         }
     }
 
     IEnumerator Cooldown()
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.4f);
         flag = -1;
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.4f);
         flag = 0;
     }
 }

@@ -29,39 +29,39 @@ public class PlayerMovement : MonoBehaviour {
 	
 	void LateUpdate () {
 
-        if (Input.GetKeyDown(KeyCode.W)){
+        if ((Input.GetKeyDown(KeyCode.W))|| (Input.GetKeyDown(KeyCode.UpArrow))){
 			stopAll();
             animator.SetBool("Speed_up", true); 
         }
-        else if (Input.GetKeyDown(KeyCode.S)){
-			stopAll();
+        else if ((Input.GetKeyDown(KeyCode.S))|| (Input.GetKeyDown(KeyCode.DownArrow))){
+            stopAll();
             animator.SetBool("Speed_down", true);
         }
-        else if (Input.GetKeyDown(KeyCode.A)){
-			stopAll();
+        else if ((Input.GetKeyDown(KeyCode.A))|| (Input.GetKeyDown(KeyCode.LeftArrow))){
+            stopAll();
             animator.SetBool("Speed_left", true);
         }
-        else if (Input.GetKeyDown(KeyCode.D)){
-			stopAll();
+        else if ((Input.GetKeyDown(KeyCode.D))|| (Input.GetKeyDown(KeyCode.RightArrow))){
+            stopAll();
             animator.SetBool("Speed_right", true);
         }
 
 		
-		if (Input.GetKeyUp(KeyCode.W)) animator.SetBool("Speed_up", false); 
-		if (Input.GetKeyUp(KeyCode.S)) animator.SetBool("Speed_down", false); 
-		if (Input.GetKeyUp(KeyCode.A)) animator.SetBool("Speed_left", false); 
-		if (Input.GetKeyUp(KeyCode.D)) animator.SetBool("Speed_right", false); 
+		if ((Input.GetKeyUp(KeyCode.W))|| (Input.GetKeyUp(KeyCode.UpArrow))) animator.SetBool("Speed_up", false); 
+		if ((Input.GetKeyUp(KeyCode.S))|| (Input.GetKeyUp(KeyCode.DownArrow))) animator.SetBool("Speed_down", false); 
+		if ((Input.GetKeyUp(KeyCode.A))|| (Input.GetKeyUp(KeyCode.LeftArrow))) animator.SetBool("Speed_left", false); 
+		if ((Input.GetKeyUp(KeyCode.D))|| (Input.GetKeyUp(KeyCode.RightArrow))) animator.SetBool("Speed_right", false); 
 
 
 
-        if (Input.GetKey(KeyCode.W)) _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, vel, 0);
-        if (Input.GetKeyUp(KeyCode.W)) _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0, 0);
-        if (Input.GetKey(KeyCode.S)) _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, -vel, 0);
-        if (Input.GetKeyUp(KeyCode.S)) _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0, 0);
-        if (Input.GetKey(KeyCode.A)) _rigidbody.velocity = new Vector3(-vel, _rigidbody.velocity.y, 0);
-        if (Input.GetKeyUp(KeyCode.A)) _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
-        if (Input.GetKey(KeyCode.D)) _rigidbody.velocity = new Vector3(vel, _rigidbody.velocity.y, 0);
-        if (Input.GetKeyUp(KeyCode.D)) _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
+        if ((Input.GetKey(KeyCode.W))|| (Input.GetKey(KeyCode.UpArrow))) _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, vel, 0);
+        if ((Input.GetKeyUp(KeyCode.W))|| (Input.GetKeyUp(KeyCode.UpArrow))) _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0, 0);
+        if ((Input.GetKey(KeyCode.S))|| (Input.GetKey(KeyCode.DownArrow))) _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, -vel, 0);
+        if ((Input.GetKeyUp(KeyCode.S))|| (Input.GetKeyUp(KeyCode.DownArrow))) _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0, 0);
+        if ((Input.GetKey(KeyCode.A))|| (Input.GetKey(KeyCode.LeftArrow))) _rigidbody.velocity = new Vector3(-vel, _rigidbody.velocity.y, 0);
+        if ((Input.GetKeyUp(KeyCode.A))|| (Input.GetKeyUp(KeyCode.LeftArrow))) _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
+        if ((Input.GetKey(KeyCode.D))|| (Input.GetKey(KeyCode.RightArrow))) _rigidbody.velocity = new Vector3(vel, _rigidbody.velocity.y, 0);
+        if ((Input.GetKeyUp(KeyCode.D))|| (Input.GetKeyUp(KeyCode.RightArrow))) _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
 	}
 	void stopAll(){
             animator.SetBool("Speed_up", false);

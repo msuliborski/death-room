@@ -49,6 +49,7 @@ public class Missile : MonoBehaviour {
     IEnumerator destroy()
     {
         yield return new WaitForSeconds(3f);
+        Instantiate(boom, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

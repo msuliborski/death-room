@@ -82,8 +82,9 @@ public class PlayerConroller : MonoBehaviour {
     void enableResetGame(){
         //opcja resetu na przycisk?
         start.SetActive(true);
+        
 
-        if(Input.GetKeyDown(KeyCode.Space)) {
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Space)) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)) {
             start.SetActive(false);
             isDead = false;
             
