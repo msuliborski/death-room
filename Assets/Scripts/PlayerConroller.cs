@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 
 public class PlayerConroller : MonoBehaviour {
     
@@ -17,6 +18,7 @@ public class PlayerConroller : MonoBehaviour {
     public static List<GameObject> deadBodies = new List<GameObject>();
 
     public GameObject start;
+    public GameObject restart;
 
     AudioSource source;
 
@@ -82,18 +84,8 @@ public class PlayerConroller : MonoBehaviour {
     void enableResetGame(){
         //opcja resetu na przycisk?
         start.SetActive(true);
+        restart.SetActive(true);
         
-
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Space)) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)) {
-            start.SetActive(false);
-            isDead = false;
-            
-            transform.position = new Vector2(1.5f, 2.2f);
-            //tilesPlacement.restoreTiles();
-            TilesPlacemant.restoreTiles();
-            //reset punktacji w gui
-
-        }   
     }
 
     public static void deleteDeadBodies(){
@@ -102,5 +94,17 @@ public class PlayerConroller : MonoBehaviour {
         deadBodies = new List<GameObject>(); 
     }
 
+    public void onRestart()
+    {
+        start.SetActive(false);
+        restart.SetActive(false);
+        isDead = false;
+            
+        transform.position = new Vector2(1.5f, 2.2f);
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        //tilesPlacement.restoreTiles();
+        TilesPlacemant.restoreTiles();
+        //reset punktacji w gui
+    }
 }
 

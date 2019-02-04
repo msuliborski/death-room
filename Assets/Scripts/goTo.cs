@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class goTo : MonoBehaviour {
 
-    void Update () {
-         if(Input.GetMouseButton(0))
-             Application.LoadLevel(1);
-     }
+    public void Procede()
+    {
+         Application.LoadLevel(1);
+    }
 }

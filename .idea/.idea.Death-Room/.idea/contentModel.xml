@@ -6,11 +6,9 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="AimShoot.cs" t="Include" />
-        <e p="ArmTurret.cs" t="Include" />
-        <e p="Coun.cs" t="Include" />
-        <e p="NextLevel.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="AimShoot.cs" t="Include" />
+          <e p="ArmTurret.cs" t="Include" />
           <e p="Blood.cs" t="Include" />
           <e p="BoobyTrapCollider.cs" t="Include" />
           <e p="Boom.cs" t="Include" />
@@ -18,6 +16,7 @@
           <e p="Cannon.cs" t="Include" />
           <e p="ChangeColor_Tile.cs" t="Include" />
           <e p="ChangeColour.cs" t="Include" />
+          <e p="Coun.cs" t="Include" />
           <e p="DeathCounter.cs" t="Include" />
           <e p="DeathManager.cs" t="Include" />
           <e p="Floor" t="Include">
@@ -35,6 +34,7 @@
           <e p="MainMenu.cs" t="Include" />
           <e p="Missile.cs" t="Include" />
           <e p="MissileLauncher.cs" t="Include" />
+          <e p="NextLevel.cs" t="Include" />
           <e p="PlayerConroller.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="RoomCounter.cs" t="Include" />
@@ -45,6 +45,8 @@
           <e p="WallSmash.cs" t="Include" />
           <e p="Walls.cs" t="Include" />
           <e p="bullet.cs" t="Include" />
+          <e p="goTo.cs" t="Include" />
+          <e p="startScript.cs" t="Include" />
         </e>
         <e p="Virtual Joystick Pack" t="Include">
           <e p="Examples" t="Include">
@@ -66,8 +68,6 @@
             </e>
           </e>
         </e>
-        <e p="goTo.cs" t="Include" />
-        <e p="startScript.cs" t="Include" />
       </e>
       <e p="Death-Room.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
