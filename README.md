@@ -1,6 +1,6 @@
 # Death Room
 
-Simple game in witch you have to get out of the Death Room, yet it is IMPOSSIBLE! DNS GameJam (2018)
+Simple game in which you have to get out of the Death Room, yet it is IMPOSSIBLE! DNS GameJam (2018)
 
 ## Getting Started
 
