@@ -1,11 +1,11 @@
-# Death Room
+﻿# Death Room
 
 Simple game in which you have to get out of the Death Room, yet it is IMPOSSIBLE! DNS GameJam (2018) </br>
 
 <p align="center">
-  <img width="940" src="Assets/screens/1.jpg">
-  <img width="940" src="Assets/screens/2.jpg">
-  <img width="940" src="Assets/screens/3.jpg">
+  <img width="940" src="Screens/1.jpg">
+  <img width="940" src="Screens/2.jpg">
+  <img width="940" src="Screens/3.jpg">
 </p>
 
 ## Getting Started
