@@ -22,11 +22,12 @@ public class PlayerConroller : MonoBehaviour {
 
     AudioSource source;
 
-    bool isDead;
+    bool isDead = false;
 
     private void Start()
     {
         source = GetComponent<AudioSource>();
+        onRestart();
         
     }
 
