@@ -8,7 +8,11 @@ public class startScript : MonoBehaviour {
 	bool initialized = false;
 	// Use this for initialization
 
-	
+	private void Start() {
+		Staart();
+	}
+
+
 	public void Staart () 
 	{
 		_player = GameObject.FindGameObjectWithTag("Player");
