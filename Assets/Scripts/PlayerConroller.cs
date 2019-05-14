@@ -96,6 +96,7 @@ public class PlayerConroller : MonoBehaviour {
 
     public void onRestart()
     {
+        Debug.Log("restart");
         start.SetActive(false);
         restart.SetActive(false);
         isDead = false;
