@@ -30,7 +30,7 @@ Using Unity Game Engine import project and hit play button. It should do everyth
 ## Authors
 * **Michał Suliborski** - [msuliborski](https://github.com/msuliborski)
 * **Jędrzej Szor** - [jedrekszor](https://github.com/jedrekszor)
-* **Antoni Forzpańczyk** - [antek2137](https://github.com/antek2137)
+* **Antoni Forzpańczyk** - [antek2137](https://github.com/antoniforzp)
 * **Olga Kardas** - [OlgaKar](https://github.com/OlgaKar)
 
 ## License
